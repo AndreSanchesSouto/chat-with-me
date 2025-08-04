@@ -3,6 +3,7 @@ import { App } from './app';
 import { Home } from './pages/home/home';
 import { Login } from './pages/authentication/login/login';
 import { MainLayout } from './layouts/main-layout/main-layout';
+import { Register } from './pages/authentication/register/register';
 
 export const routes: Routes = [
     {
@@ -14,7 +15,11 @@ export const routes: Routes = [
         }]
     },
     {
-        path: "login",
+        path: "authentication/login",
         component: Login
+    },
+    {
+        path: "authentication/register",
+        component: Register
     }
 ];
