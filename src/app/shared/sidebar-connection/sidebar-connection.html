@@ -1,13 +1,14 @@
 <nav>
-    <div>
-        <li>CWChat</li>
-        <li>Whats</li>
-        <li>Disc</li>
-        <li>Telegram</li>
-        <li>Insta</li>
-        <li>Face</li>
-    </div>
-    <div>
-        <li>Perfil</li>
-    </div>
+    <ul>
+        <div>
+            @for (chatApp of chatApps; track chatApp.name) {
+                <li>
+                    <app-chat-chooser [chatApp]="chatApp"></app-chat-chooser>
+                </li>
+            }
+        </div>
+        <div >
+            <li class="profile">Perfil</li>
+        </div>
+    </ul>
 </nav>

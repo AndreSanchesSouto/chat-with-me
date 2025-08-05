@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-instagram-icon',
@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './instagram-icon.css'
 })
 export class InstagramIcon {
-
+  @Input() size: number | string = 24;
+  @Input() color: string = '#FFFF';
 }
