@@ -1,6 +1,6 @@
 import { IconProps } from "../IconProps";
 
-export default function FacebookIcon({ size = "35", color = "#00000" }: IconProps) {
+export default function MessagerIcon({ size = "35", color = "#00000" }: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
