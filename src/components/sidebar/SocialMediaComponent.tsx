@@ -1,12 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ThreePoints } from "../svg/generic-icon/ThreePointsIcon";
 import PlusCircle from "../svg/generic-icon/PlusCirclueIcon";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { SocialMediaComponentProps, SocialMediaModalProps } from "./interface";
-
 
 const ROUTES: Record<string, string> = {
   whatsapp: "/wa-connect",
@@ -93,8 +92,29 @@ function SocialMediaComponent({
 function SocialMediaModal({ isOpen, icon, onClose, instances, route }: SocialMediaModalProps) {
   if (!isOpen) return null;
 
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+        onClose(); // Fecha modal se clicou fora
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen, onClose]);
+
   return (
-    <div className="bg-primary-base absolute left-1/2 top-5 z-10 ring rounded-lg max-h-30 min-w-[8rem] overflow-y-auto"
+    <div 
+      ref={modalRef}
+      className="bg-primary-base absolute left-1/2 top-5 z-10 ring rounded-lg max-h-30 min-w-[8rem] overflow-y-auto"
       onClick={(e) => e.stopPropagation()}
     >
       <div className="grid grid-cols-2 gap-2 p-3">
@@ -103,7 +123,12 @@ function SocialMediaModal({ isOpen, icon, onClose, instances, route }: SocialMed
             key={instance.id}
             className="relative ring w-min h-min rounded-full p-1 bg-primary-base-light flex items-center justify-center"
           >
-            <Link href={`${route}/${instance.id}`} onClick={(e) => e.stopPropagation()}>
+            <Link 
+              href={`${route}/${instance.id}`}
+              onClick={(e) => {
+                e.stopPropagation()
+                onClose()
+              }}>
               {icon}
             </Link>
             <p className="absolute text-sm text-primary-light -bottom-5 whitespace-nowrap">
@@ -112,7 +137,14 @@ function SocialMediaModal({ isOpen, icon, onClose, instances, route }: SocialMed
           </div>
         ))}
 
-        <Link href={route} onClick={(e) => e.stopPropagation()} className="cursor-pointer flex items-center justify-center">
+        <Link 
+          href={route}
+          onClick={(e) => {
+            e.stopPropagation()
+            onClose()
+          }}
+          className="cursor-pointer flex items-center justify-center"
+        >
           <PlusCircle />
         </Link>
       </div>

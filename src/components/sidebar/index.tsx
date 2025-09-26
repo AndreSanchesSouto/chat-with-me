@@ -22,7 +22,7 @@ const jsonReq = {
     },
     {
       id: "2",
-      name: "andre",
+      name: "andre_sot",
     }
   ],
   discordInstances: [],
