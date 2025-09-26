@@ -9,6 +9,7 @@ export interface SocialMediaModalProps {
   onClose: () => void;
   instances: Instance[];
   route: string;
+  isThreePointsClicked: boolean;
 }
 
 export interface SocialMediaComponentProps {

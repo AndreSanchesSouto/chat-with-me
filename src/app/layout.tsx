@@ -1,4 +1,4 @@
-import Sidebar from "@/components/sidebar";
+import Sidebar from "@/shared/components/sidebar";
 import "./globals.css";
 
 function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

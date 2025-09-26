@@ -1,6 +1,6 @@
 import { IconProps } from "../IconProps";
 
-export function ThreePoints({ size = 16, color = "#000000" }: IconProps) {
+export function ThreePoints({ size = 16, color = "#2d3236" }: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

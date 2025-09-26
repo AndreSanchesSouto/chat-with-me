@@ -1,4 +1,4 @@
-import Sidebar from "@/components/sidebar";
+import Sidebar from "@/shared/components/sidebar";
 
 function WithSidebarLayout({ children }: { children: React.ReactNode }) {
   return (
