@@ -1,8 +1,8 @@
 "use client"
 
 import { useState } from "react";
-import ListIcon from "../svg/generic-icon/ListIcon";
-import { UserIcon } from "../svg/generic-icon/UserIcon";
+import ListIcon from "../../svg/generic-icon/ListIcon";
+import { UserIcon } from "../../svg/generic-icon/UserIcon";
 
 function SettingsComponent() {
   const [showSettingModal, setShowSettingModal] = useState<boolean>(false)

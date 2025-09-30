@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ThreePoints } from "../svg/generic-icon/ThreePointsIcon";
-import PlusCircle from "../svg/generic-icon/PlusCirclueIcon";
+import { ThreePoints } from "../../svg/generic-icon/ThreePointsIcon";
+import PlusCircle from "../../svg/generic-icon/PlusCirclueIcon";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { SocialMediaComponentProps, SocialMediaModalProps } from "./interfaces";

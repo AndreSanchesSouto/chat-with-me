@@ -1,6 +1,6 @@
 import { IconProps } from "../IconProps";
 
-export function ThreePoints({ size = 16, color = "#2d3236" }: IconProps) {
+export function ThreePoints({ size = 16 }: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -8,7 +8,7 @@ export function ThreePoints({ size = 16, color = "#2d3236" }: IconProps) {
       width={size}
       height="auto"
       fill="none"
-      stroke={color}
+      stroke="currentColor"
       strokeWidth={2.2}
       strokeLinecap="round"
       strokeLinejoin="round"

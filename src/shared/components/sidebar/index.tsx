@@ -1,12 +1,12 @@
 "use client";
 
-import DiscordIcon from "../svg/social-media/DIscordIcon";
-import InstagramIcon from "../svg/social-media/InstagramIcon";
-import TelegramIcon from "../svg/social-media/TelegramIcon";
-import WhatsAppIcon from "../svg/social-media/WhatsAppIcon";
+import DiscordIcon from "../../svg/social-media/DIscordIcon";
+import InstagramIcon from "../../svg/social-media/InstagramIcon";
+import TelegramIcon from "../../svg/social-media/TelegramIcon";
+import WhatsAppIcon from "../../svg/social-media/WhatsAppIcon";
 import SettingsComponent from "./SettingsComponent";
 import SocialMediaComponent from "./SocialMediaComponent";
-import MessagerIcon from "../svg/social-media/MessagerIcon";
+import MessagerIcon from "../../svg/social-media/MessagerIcon";
 import { usePathname } from "next/navigation";
 
 const jsonReq = {
@@ -40,18 +40,12 @@ function Sidebar() {
         {[
           {
             icon: (
-              <div className="bg-primary-base-light w-min h-min rounded-full p-[7px] ring ring-primary-dark">
-                <div
-                  className={`${
-                    pathname.startsWith("/wa-connect")
-                      ? "text-lime-400"
-                      : "text-primary-dark"
-                  }
-                  hover:text-lime-500 duration-200 transition-all
-                `}
-                >
-                  <WhatsAppIcon />
-                </div>
+              <div className={`${pathname.startsWith("/wa-connect")
+                  ? "text-lime-400 ring-lime-400"
+                  : "text-primary-dark ring-primary-dark"
+                } hover:text-lime-500 hover:ring-lime-500 duration-200 transition-all bg-primary-base-light w-min h-min rounded-full p-[7px] ring-[1.5px]`}
+              >
+                <WhatsAppIcon />
               </div>
             ),
             type: "whatsapp",
@@ -60,18 +54,12 @@ function Sidebar() {
           },
           {
             icon: (
-              <div className="bg-primary-base-light w-min h-min rounded-full p-[7px] ring ring-primary-dark">
-                <div
-                  className={`${
-                    pathname.startsWith("/te-connect")
-                      ? "text-cyan-400"
-                      : "text-primary-dark"
-                  }
-                  hover:text-cyan-500 duration-200 transition-all
-                `}
-                >
-                  <TelegramIcon />
-                </div>
+              <div className={`${pathname.startsWith("/te-connect")
+                  ? "text-cyan-400 ring-cyan-400"
+                  : "text-primary-dark ring-primary-dark"
+                } hover:text-cyan-500 hover:ring-cyan-500 duration-200 transition-all bg-primary-base-light w-min h-min rounded-full p-[7px] ring-[1.5px]`}
+              >
+                <TelegramIcon />
               </div>
             ),
             type: "telegram",
@@ -80,18 +68,12 @@ function Sidebar() {
           },
           {
             icon: (
-              <div className="bg-primary-base-light w-min h-min rounded-full p-[7px] ring ring-primary-dark">
-                <div
-                  className={`${
-                    pathname.startsWith("/disc-connect")
-                      ? "text-sky-400"
-                      : "text-primary-dark"
-                  }
-                  hover:text-sky-500 duration-200 transition-all
-                `}
-                >
-                  <DiscordIcon />
-                </div>
+              <div className={`${pathname.startsWith("/disc-connect")
+                  ? "text-sky-400 ring-sky-400"
+                  : "text-primary-dark ring-primary-dark"
+                } hover:text-sky-500 hover:ring-sky-500 duration-200 transition-all bg-primary-base-light w-min h-min rounded-full p-[7px] ring-[1.5px]`}
+              >
+                <DiscordIcon />
               </div>
             ),
             type: "discord",
@@ -100,18 +82,12 @@ function Sidebar() {
           },
           {
             icon: (
-              <div className="bg-primary-base-light w-min h-min rounded-full p-[7px] ring ring-primary-dark">
-                <div
-                  className={`${
-                    pathname.startsWith("/ins-connect")
-                      ? "text-pink-500"
-                      : "text-primary-dark"
-                  }
-                  hover:text-pink-600 duration-200 transition-all
-                `}
-                >
-                  <InstagramIcon />
-                </div>
+              <div className={`${pathname.startsWith("/ins-connect")
+                  ? "text-pink-500 ring-pink-500"
+                  : "text-primary-dark ring-primary-dark"
+                } hover:text-pink-600 hover:ring-pink-600 duration-200 transition-all bg-primary-base-light w-min h-min rounded-full p-[7px] ring-[1.5px]`}
+              >
+                <InstagramIcon />
               </div>
             ),
             type: "instagram",
@@ -120,18 +96,12 @@ function Sidebar() {
           },
           {
             icon: (
-              <div className="bg-primary-base-light w-min h-min rounded-full p-[7px] ring ring-primary-dark">
-                <div
-                  className={`${
-                    pathname.startsWith("/mess-connect")
-                      ? "text-blue-400"
-                      : "text-primary-dark"
-                  }
-                  hover:text-blue-500 duration-200 transition-all
-                `}
-                >
-                  <MessagerIcon />
-                </div>
+              <div className={`${pathname.startsWith("/mess-connect")
+                  ? "text-blue-600 ring-blue-600"
+                  : "text-primary-dark ring-primary-dark"
+                } hover:text-blue-700 hover:ring-blue-700 duration-200 transition-all bg-primary-base-light w-min h-min rounded-full p-[7px] ring-[1.5px]`}
+              >
+                <MessagerIcon />
               </div>
             ),
             type: "messager",
